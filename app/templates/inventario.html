@@ -1,0 +1,121 @@
+       
+
+    <section class="content">
+        <div class="content__inner">
+                <header class="content__title">
+                        <h1>Agregar producto</h1>
+    
+                            <div class="actions">
+                                    <div id="Lafecha"></div>
+
+                            </div>
+                 </header>
+
+                    <form  ng-submit="insertarproducto(codigo_producto)">
+                            <div class="card">
+                                    
+                                    <div class="card-body">
+                                        
+                                       
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group"  class="wrap-input2 validate-input" >
+                                                    <label>Producto</label>
+
+                                                    <input id="nombres" type="text" class="form-control  " placeholder="Producto" ng-model="nombre" >
+
+                                                    <i class="form-group__bar"></i>
+                                                </div>
+                                            </div>
+            
+                                            <div class="col-sm-6">
+                                                <div class="form-group"  class="wrap-input2 validate-input" >
+                                                    <label>Descripcion</label>
+                                                    <input  type="text" class="form-control " placeholder="Descripcion" ng-model="descripcion">
+                                                    <i class="form-group__bar"></i>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                    <label>Precio</label>
+
+                                                    <div class="input-group-prepend" >
+                                                       
+
+                                                    <span class="input-group-text"><i class="zwicon-dollar-sign" ng-click="mostrarpassword()"></i> </span>
+                                                    <input  type="number" class="form-control " placeholder="Precio" ng-model="precio">
+                                                    </div>
+                                                </div>
+
+                                             <br>
+                                             <div class="col-sm-6">
+                                                
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Estado</label>
+                    
+                                                            <select style="cursor: pointer;"  ng-model="estado" class="form-control" data-placeholder="Estado">
+                                                                <option style= "background-color: black; "></option>
+                                                                <option style= "background-color: black; " id="Bueno" >Bueno</option>
+                                                                <option style= "background-color: black; " id="Normal" >Normal</option>
+                                                                <option style= "background-color: black; " id="Malo" >Malo</option>
+
+                                                               
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                       
+                                              </div>
+
+                                              
+                                                
+                                                    
+                                             </div>
+                                             
+                                            
+                                           
+                                            <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Cantidad</label>
+                                                        
+                                                        <input id="celular" type="number" class="form-control input-mask" data-mask="0000000000" placeholder="0000000000"   ng-model="cantidad" >
+                                                        <i class="form-group__bar"></i>
+                                                    </div>
+                                             </div>
+
+                                             <div class="col-sm-6">
+                                                    <label>Codigo del producto</label>
+                                                    <div class="input-group-prepend">
+
+                                                    <span class="input-group-text"><i class="zwicon-bar-code" ng-click="mostrarpassword()"></i> </span>
+                                                     <input id="codigo" type="text" class="form-control input-mask" data-mask="0000000000" placeholder="0000000000"   ng-model="codigo_producto" >
+                                                    </div>
+                                             </div>
+                                            
+                                        </div>
+                                        
+                                    
+                                            
+                                        <button    class="btn btn-theme btn-block" id="sa-info">Agregar producto</button>
+                                    
+                                    
+                            </div>
+                               
+    
+                                                    
+                             
+                            
+                    </form>
+
+                    
+
+                    
+
+                </section>   
+        <script src="resources/js/app.min.js"></script>
+        
+        
+
+        

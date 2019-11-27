@@ -1,0 +1,148 @@
+
+    <section class="content">
+  
+
+                <div class="content__inner d-print-none">
+                    <header class="content__title">
+                            <h1>Usuarios</h1>
+
+                            <div class="actions">
+                                    <div id="Lafecha" style="margin-right: 20px"></div>
+                             </div>
+
+                    </header>
+
+                    
+                        <div class="card">
+
+                                
+                            <div class="card-body" style="overflow: auto;">
+
+                                    <div class="row"> 
+                                            <div class="input-group-prepend | col-sm-11" style="padding-left: 0px;padding-right: 0px;">
+                                                        <span class="input-group-text" style="cursor: pointer;margin-left: 12px;padding-right: 0px;"  ><i  class="zwicon-search" ></i> </span>
+                                                        <input type="text" class="form-control col-sm-12" ng-model="buscarusuario" placeholder="Buscar Usuario" style="border-left: 1px;padding-left: 10px;margin-right: 20px;">
+                                                
+                                            </div> 
+                                                
+                                            
+                                                 
+                                           
+                                        </div>
+                                                    
+                                        
+                                          <br>
+                                            <div class="form-group">
+                                             <div class="row" style="margin-left: 0px; margin-right: 0px;">
+
+                                                <div class="custom-control custom-radio mb-2" >
+                                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input  ng-valid ng-dirty ng-touched ng-valid-parse  ng-not-empty" ng-click="traeractivos(activo)"  ng-model="activo" value="1">
+                                                    <label class="custom-control-label"   for="customRadio1">Activos</label>
+                                                </div>
+                                                <div class="custom-control custom-radio mb-2" style=" margin-left: 10px;">
+                                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" ng-click="traeractivos(activo)"  ng-model="activo" value="0">
+                                                    <label class="custom-control-label"   for="customRadio2">No activos</label>
+                                                </div>
+                                            </div>
+                                            
+                                                <div class="row" style="padding-top: 8px;" >
+                                                    <div class="col-xs-12">
+                                                        <div class="btn-group">
+                                                            <button style="margin-left: 15px;" class="btn btn-outline-theme" ng-model="datos.plan" ng-click="mostrarusuarios()">Todos</button>
+                                                            <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="mostrarusuarios('15 Dias')">15 días</button>
+                                                            <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="mostrarusuarios('30 Dias')">30 días</button>
+                                                            <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="mostrarusuarios('Dias Contados')">Días contados</button>
+                                                        </div>
+                                                    </div>
+                            
+                                                </div>
+                                                <br>
+
+                                    <table  class="table table-dark mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nombres</th>
+                                                <th>Sexo</th>
+                                                <th>Fecha de ingreso</th>
+                                                <th>Fecha de corte</th>
+                                                <th>Plan</th>
+                                                <th>Documento</th>
+                                                <th>Celular</th>
+                                                <th>Peso</th>
+                                                <th>Pecho</th>
+                                                <th>Brazo</th>
+                                                <th>Cintura</th>
+                                                <th>Pierna</th>
+                                                <th>Cola</th>
+                                                <th>Activo/No Activo</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr   ng-repeat="usuario in usuarios | filter:buscarusuario:activo">
+                                                <td  >{{$index+1}}</td>
+                                                <td style="cursor: pointer;" ng-click="Usuasistencias(usu)">{{usuario.nombres}} {{usuario.apellidos}}</td>
+                                                <td style="cursor: pointer;" ng-click="Usuasistencias(usu)" >{{usuario.sexo}}</td>
+                                                <td >{{usuario.fecha  | date:"dd/MM/yyyy"}}</td>
+                                                <td >{{usuario.fecha_fin | date:"dd/MM/yyyy"}}</td>
+                                                <td >{{usuario.plan}}</td>
+                                                <td  >{{usuario.tipo_documento}} {{ usuario.numero_documento}}</td>
+                                                <td >{{usuario.celular}}</td>
+                                                <td  >{{usuario.peso}}</td>
+                                                <td  >{{usuario.pecho}}</td>
+                                                <td>{{usuario.brazo}}</td>
+                                                <td >{{usuario.cintura}}</td>
+                                                <td >{{usuario.pierna}}</td>
+                                                <td >{{usuario.cola}}</td>
+                                                <td >
+
+                                                    <div class="col-sm-4 col-md-3">
+                                                        <div class="form-group">
+                                                            <div class="toggle-switch">
+                                                                <input type="checkbox"  ng-click="Actualizactivo(usuario)"  class="toggle-switch__checkbox" ng-true-value="1" ng-false-value="0" ng-model="usuario.activo">
+                                                                <i class="toggle-switch__helper"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                       
+                                                        <button ng-click="Actualizarusuarios(usuario)" class=" btn btn-theme btn--icon" ><i  class="zwicon-edit-circle"></i></button>
+                                                </td>
+                                                <td>
+                                                        <button class="btn btn-theme btn--icon" ng-click="Swal(usuario)" ><i class="zwicon-user-delete" ></i></button>
+                                                        
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                      
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+        </div>
+
+
+       
+
+    </section>
+
+
+
+    <!--Edit-->
+    
+
+  
+ 
+      
+
+        
+
+        <!-- App functions and actions -->
+        
+        <script src="resources/js/app.min.js"></script>

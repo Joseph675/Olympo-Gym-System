@@ -1,0 +1,135 @@
+
+
+            <section  class="content">
+
+                <div class="content__inner d-print-none">
+
+                     <header class="content__title">
+                            <h1 >{{usu.nombres}} {{usu.apellidos}}</h1>
+
+                            <div class="actions">
+                                    <div id="Lafecha"></div>
+                             </div>
+                     </header>
+
+                    <div class="card profile">
+                        <div class="profile__img">
+                            <img src="demo/img/contacts/2.png" alt="">
+
+                        </div>
+
+                        <div class="profile__info">
+
+                            <ul class="icon-list">
+                                <li><i class="zwicon-phone"></i> {{usu.celular}}</li>
+                                <li><i class="fas fa-venus-mars"></i>{{usu.sexo}}</li>
+                                <li><i class="zwicon-mail"></i>{{usu.email}}</li>
+                                <li><i class="zwicon-calendar-day"></i>{{usu.fecha}}</li>
+                                
+            
+            
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div  class="card" >
+                        <div class="card-body">
+                            <h5 class="card-body__title">{{usu.nombres }} {{usu.apellidos}}</h5>
+                            <div class="row">
+            
+                    <div class="col-sm-12"  style="margin-bottom: 15px; "> 
+                                                            <div class="row"> 
+                                                                <div class="col-xs-12 col-sm-5">
+                                                                    <select class="form-control"  name="select_year" ng-model="dato.select_year">
+                                                                        <option style= "background-color: black; "></option>
+                                                                        <option  style= "background-color: black; " value="2019">2019</option>
+                                                                        <option  style= "background-color: black; " value="2020">2020</option>
+                                                                        <option  style= "background-color: black; " value="2021">2021</option>
+                                                                        <option  style= "background-color: black; " value="2022">2022</option>
+                                                                        <option  style= "background-color: black; " value="2023">2023</option>
+                                                                        <option  style= "background-color: black; " value="2024">2024</option>
+                                                                        <option  style= "background-color: black; " value="2025">2025</option>
+                                                                    </select>
+                                                                </div> 
+                                                                    
+                                                                <div class="col-xs-12 col-sm-5">
+                                                                    <select class="form-control"  name="select_month" ng-model="dato.select_month">
+                                                                        <option style= "background-color: black; "></option>
+    
+                                                                            <option   style= "background-color: black; " value="01">Enero</option>
+                                                                            <option  style= "background-color: black; "  value="02">Febrero</option>
+                                                                            <option  style= "background-color: black; " value="03">Marzo</option>
+                                                                            <option  style= "background-color: black; " value="04">Abril</option>
+                                                                            <option  style= "background-color: black; " value="05">Mayo</option>
+                                                                            <option  style= "background-color: black; " value="06">Junio</option>
+                                                                            <option  style= "background-color: black; " value="07">Julio</option>
+                                                                            <option  style= "background-color: black; " value="08">Agosto</option>
+                                                                            <option  style= "background-color: black; " value="09">Septiembre</option>
+                                                                            <option style= "background-color: black; "  value="10">Octubre</option>
+                                                                            <option  style= "background-color: black; " value="11">Noviembre</option>
+                                                                            <option  style= "background-color: black; " value="12">Diciembre</option>
+                                                                        </select>
+                                                                </div>
+                                                                     
+                                                                <div class="col-xs-12 col-sm-1">
+                                    
+                                                                    <button  class="btn btn-theme btn--icon-text" ng-click="traerDatos(dato)">Buscar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                <br>
+
+                            </div>
+                            <br>
+                           
+                            <button data-type="success" ng-click="editarAsistencia(asi)"  ng-repeat="asi in usu.asistencias" class="btn btnicon-text   btn-outline-theme-dark " ><i class="zwicon-calendar-day" ></i>{{asi.cita | date:"dd/MM/yyyy"}}</button>
+                            
+                            <br>
+                            <br>
+            
+                            <h5 class="card-body__title">Informacion</h5>
+            
+                            <ul class="icon-list" ng-submit="insertarusuarios(username)">
+                                <li><i class="zwicon-phone"></i> {{usu.celular}}</li>
+                                <li><i class="zwicon-mail"></i>{{usu.email}}</li>
+
+
+                            </ul>
+                            
+                            <br>
+
+                            <form >
+                                <div class="col-sm-12"  style="margin-bottom: 15px; ">   
+                                    <div class="row">
+    
+                                        <div class="col-sm-6" style="padding-left: 0px;">
+                                    
+                                            <h5 class="card-body__title">Observaciones</h5>
+                                    
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="zwicon-face-id" ng-click="mostrarpassword()"></i> </span>
+                                                 <input type="text" class="form-control " placeholder="Observacion" ng-model="usu.observaciones">
+                                                 <button class="btn btn-theme btn--icon-text" type="submit" ng-click="Actualizarusuario(usu)" style="left: 15px;">Aceptar</button>
+                                             </div>
+                                             
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                           
+
+                           
+                            <br>
+                            <div  class="btn-demo">
+                                <button ui-sref="panel.table" class="btn btn-theme btn--icon-text"><i class="zwicon-arrow-left"></i> Volver</button>
+                            </div>
+                        </div>
+                        
+            
+                      
+                        
+                    </div>
+                </div>
+            </section>
+        </main>

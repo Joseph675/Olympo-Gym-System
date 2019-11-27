@@ -1,0 +1,136 @@
+    <section class="content">
+                <div class="content__inner d-print-none">
+                    <header class="content__title">
+                        <h1>Productos</h1>
+                        <div class="actions">
+                                <div id="Lafecha"></div>
+
+                        </div>
+                    </header>
+
+                    
+                        <div class="card">
+                            <div class="card-body" style="
+                            overflow: auto;
+                        ">
+
+                                <div >
+                                    <div >
+                                                    
+                                        <input class="form-control" type="text" placeholder="Buscar Producto" aria-label="Search" ng-model="buscarproducto">
+                                          <br>
+                                            
+                                    </div>
+                                    <table  class="table table-dark mb-0">
+                                            
+                                            
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Producto</th>
+                                                <th>Descripción</th>
+                                                <th>Estado</th>
+                                                <th>Precio</th>
+                                                <th>Cantidad</th>
+                                                <th>Codigo del producto</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="producto in inventario | filter:buscarproducto">
+                                                <td >{{$index+1}}</td>
+                                                <td>{{producto.nombre}}</td>
+                                                <td>{{producto.descripcion}}</td>
+                                                <td>{{producto.estado}}</td>
+                                                <td>{{producto.precio}}</td>
+                                                <td>{{producto.cantidad}}</td>
+                                                <td>{{producto.codigo_producto}}</td>
+                                               
+                                                <td>
+                                                       
+                                                        <button ng-click="Actualizarproducto(producto)" class=" btn btn-theme btn--icon" ><i  class="zwicon-edit-circle"></i></button>
+                                                </td>
+                                                <td>
+                                                        <button class="btn btn-theme btn--icon" ng-click="eliminarproducto(producto)" ><i class="zwicon-user-delete" ></i></button>
+                                                        
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                      
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+    
+                                
+                            </div>
+                        </div>
+    
+                        
+
+                       
+                        
+
+    
+                   
+        </div>
+
+
+<!--Print-->
+        <div class="card d-none d-print-block">
+            <div class="card-body">
+             <table class="table table-bordered mb-0" >
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Sexo</th>
+                        <th>Fecha</th>
+                        <th>Celular</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="usuario in usuarios">
+                     <td >{{$index+1}}</td>
+                    <td >{{usuario.nombres}}</td>
+                    <td>{{usuario.apellidos}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td>{{usuario.sexo}}</td>
+                    <td>{{usuario.fecha}}</td>
+                    <td>{{usuario.celular}}</td>
+                    <td>{{usuario.username}}</td>
+                
+                    
+                </tr>
+                  
+                </tbody>
+              </table>
+          </div>
+        </div>
+
+       
+
+    </section>
+
+
+
+    <!--Edit-->
+    
+
+  
+ 
+      
+
+        
+
+        <!-- App functions and actions -->
+        
+        <script src="resources/js/app.min.js"></script>

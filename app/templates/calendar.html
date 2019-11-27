@@ -1,0 +1,381 @@
+        <link rel="stylesheet" href="resources/vendors/zwicon/zwicon.min.css">
+        <link rel="stylesheet" href="resources/vendors/animate.css/animate.min.css">
+        <link rel="stylesheet" href="resources/vendors/overlay-scrollbars/OverlayScrollbars.min.css">
+        <link rel="stylesheet" href="resources/vendors/fullcalendar/core/main.min.css">
+
+        <!-- App styles -->
+        <link rel="stylesheet" href="resources/css/app.min.css">
+
+<header class="header">
+                <div class="navigation-trigger d-xl-none" data-sa-action="aside-open" data-sa-target=".sidebar">
+                    <i class="zwicon-hamburger-menu"></i>
+                </div>
+    
+                <div class="logo d-none d-sm-inline-flex">
+                    <a ui-sref="panel">GYM</a>
+                </div>
+    
+                <form class="search">
+                    <div class="search__inner">
+                        <input type="text" class="search__text" placeholder="Search for people, files, documents...">
+                        <i class="zwicon-search search__helper"></i>
+                        <i class="zwicon-arrow-left search__reset" data-sa-action="search-close"></i>
+                    </div>
+                </form>
+    
+                <ul class="top-nav">
+                    <li class="d-xl-none"><a data-sa-action="search-open"><i class="zwicon-search"></i></a></li>
+    
+                    <li class="dropdown">
+                        <a  data-toggle="dropdown" class="top-nav"><i class="zwicon-task"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
+                            <div class="dropdown-header">
+                               Tareas
+                                <div class="actions">
+                                    <a ui-sref="tareas" class="actions__item zwicon-plus"></a>
+                                </div>
+                            </div>
+    
+                            <div  class="listview listview--hover ">
+                               
+                                   <a class="listview listview--hover "> 
+                                        
+                                    <div ng-repeat="asd in asdasd" class=" icons-demo__item listview__content ">
+                                      
+                                            <i class="zwicon-chevron-right">
+                                                    <span>sad</span>
+                                            </i>
+                                         
+                                       
+                                    </div>
+    
+                                   
+                                    
+                                    
+                                </a>
+    
+                                
+    
+                                <a  ui-sref="tareas" class="view-more">Ver todas las tareas</a>
+    
+                            </div>
+                        </div>
+    
+                    </li>
+    
+    
+                    <li class="dropdown d-none d-sm-inline-block">
+                        <a  data-toggle="dropdown"><i class="zwicon-grid"></i></a>
+    
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
+                            <div class="row app-shortcuts">
+                                <a class="col-4 app-shortcuts__item" >
+                                    <i class="zwicon-calendar-never"></i>
+                                    <small class="">Calendar</small>
+                                </a>
+                                <a class="col-4 app-shortcuts__item" >
+                                    <i class="zwicon-document"></i>
+                                    <small class="">Files</small>
+                                </a>
+                                <a class="col-4 app-shortcuts__item" >
+                                    <i class="zwicon-mail"></i>
+                                    <small class="">Email</small>
+                                </a>
+                                <a class="col-4 app-shortcuts__item" >
+                                    <i class="zwicon-line-chart"></i>
+                                    <small class="">Reports</small>
+                                </a>
+                                <a class="col-4 app-shortcuts__item" >
+                                    <i class="zwicon-broadcast"></i>
+                                    <small class="">News</small>
+                                </a>
+                                <a class="col-4 app-shortcuts__item">
+                                    <i class="zwicon-image"></i>
+                                    <small class="">Gallery</small>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+    
+                    <li class="dropdown d-none d-sm-inline-block">
+                        <a  data-toggle="dropdown"><i class="zwicon-more-h"></i></a>
+    
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a  class="dropdown-item" data-sa-action="fullscreen">Fullscreen</a>
+                            <a class="dropdown-item">Clear Local Storage</a>
+                            <a  class="dropdown-item">Settings</a>
+                        </div>
+                    </li>
+    
+                    <li class="d-none d-sm-inline-block">
+                        <a class="top-nav__themes" data-sa-action="aside-open" data-sa-target=".themes"><i class="zwicon-palette"></i></a>
+                    </li>
+                </ul>
+    
+                <div class="clock d-none d-md-inline-block h.mm">
+                    <div class="time ">
+                        <span class="time__hours"></span>
+                        <span class="time__min"></span>
+                        <span class="time__sec"></span>
+                    </div>
+                </div>
+            </header>
+
+        <aside class="sidebar ">
+            <div class="scrollbar">
+                <div class="user">
+                    <div class="user__info" data-toggle="dropdown">
+                        <img class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
+                        <div>
+                                <div class="user__name">Mariana,Valentina y Kevin</div>
+                                <div class="user__email">marianavalentinakevin@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-menu dropdown-menu--invert shows">
+                        <a ui-sref="perfil" class="dropdown-item">Ver Perfil</a>
+                        <a class="dropdown-item" >Settings</a>
+                        <a ui-sref="login" class="dropdown-item" >Salir</a>
+                    </div>
+                </div>
+
+                <ul class="navigation">
+                    <li><a ui-sref="panel"><i class="zwicon-home"></i> Home</a></li>
+
+                    <li ><a ui-sref="asistencias"><i class="zwicon-smile"></i> Asistencias</a></li>
+        
+                    <li ><a ui-sref="table"><i i class="zwicon-layout-2"></i> Tabla</a></li>
+        
+                    <li ><a ui-sref="form"><i i class="zwicon-user-plus"></i> Formulario</a></li>
+        
+                    <li ><a ui-sref="sincronizacion"><i i class="zwicon-cloud"></i> Sincronizacion</a></li>
+        
+                    <li  class="navigation__active"><a ui-sref="calendar"><i i class="zwicon-calendar-month"></i> Calendario</a></li>
+
+                    <li ><a ui-sref="login"><i i class="zwicon-back"></i> Salir</a></li>
+
+            </ul>
+            </div>
+        </aside>
+        <div class="themes">
+            <div class="scrollbar">
+                <a  class="themes__item" data-sa-value="1"><img src="resources/img/bg/1.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="2"><img src="resources/img/bg/2.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="3"><img src="resources/img/bg/3.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="4"><img src="resources/img/bg/4.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="5"><img src="resources/img/bg/5.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="6"><img src="resources/img/bg/6.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="7"><img src="resources/img/bg/7.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="8"><img src="resources/img/bg/8.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="9"><img src="resources/img/bg/9.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="10"><img src="resources/img/bg/10.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="11"><img src="resources/img/bg/11.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="12"><img src="resources/img/bg/12.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="13"><img src="resources/img/bg/13.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="14"><img src="resources/img/bg/14.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="15"><img src="resources/img/bg/15.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="16"><img src="resources/img/bg/16.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="17"><img src="resources/img/bg/17.jpg" alt=""></a>
+                
+            </div>
+        </div>
+
+
+                    
+
+
+               <section class="content">
+
+
+                    <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Asistencias</h4>
+                                <h6 class="card-subtitle">Seleccionar usuario:</h6>
+        
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                            <input class="form-control" type="text" placeholder="Buscar Usuario" aria-label="Search" ng-model="buscarusuario">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Sexo</th>
+                                            <th>Celular</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-toggle="modal" data-target="#modal-large" class="btn-demo" ng-click="" ng-repeat="usuario in usuarios | filter:buscarusuario:activo">
+                                                <td >{{$index+1}}</td>
+                                                <td >{{usuario.nombres}}</td>
+                                                <td>{{usuario.apellidos}}</td>
+                                                <td>{{usuario.sexo}}</td>
+                                                <td>{{usuario.celular}}</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                
+
+             
+            </section>
+            
+         
+            <div class="modal fade" id="modal-large" tabindex="-1" data-backdrop="false" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Calendario</h5>
+                            </div>
+                            <div class="modal-body">
+                                    <div class="content__inner">
+                                            <header class="content__title content__title--calendar">
+                                                <h1><span id="calendar-title">Calendar</span> </h1>
+                        
+                                                <div class="actions actions--calendar">
+                                                    <a href="" data-toggle="tooltip" title="Previous" class="actions__item" data-calendar-view="prev"><i class="zwicon-arrow-square-left"></i></a>
+                                                    <a href="" data-toggle="tooltip" title="Today" class="actions__item" data-calendar-view="today"><i class="zwicon-arrow-square-down"></i></a>
+                                                    <a href="" data-toggle="tooltip" title="Next" class="actions__item" data-calendar-view="next"><i class="zwicon-arrow-square-right"></i></a>
+                                                </div>
+                                            </header>
+                        
+                                            <div id="calendar" class="calendar card"></div>
+                        
+                                            <!-- Add new event -->
+                                            <div class="modal fade" id="event-new" data-backdrop="static" data-keyboard="false">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Añadir asistencia</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control event-new__title" placeholder="Event Title">
+                                                            </div>
+                                                        </div>
+                        
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-link event-new__add">Add Event</button>
+                                                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                        
+                                            <!-- Edit event -->
+                                            <div class="modal fade" id="event-edit" data-backdrop="static" data-keyboard="false">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Edit Event</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form class="edit-event__form">
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control event-edit__title" placeholder="Event Title">
+                                                                </div>
+                        
+                                                                <input type="hidden" class="edit-event__id">
+                                                            </form>
+                                                        </div>
+                        
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-link mr-auto text-red event-edit__delete">Delete</button>
+                                                            <button class="btn btn-link event-edit__update">Update</button>
+                                                            <button class="btn btn-link" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link">Guardar</button>
+                                <button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Asistencias</h4>
+                        <h6 class="card-subtitle">Seleccionar usuario:</h6>
+
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                    <input class="form-control" type="text" placeholder="Buscar Usuario" aria-label="Search" ng-model="buscarusuario">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Sexo</th>
+                                    <th>Celular</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-toggle="modal" data-target="#modal-centered" class="btn-demo" ng-click="" ng-repeat="usu in usuarios | filter:buscarusuario:activo">
+                                    <td >#{{$index+1}}</td>
+                                    <td >{{usu.nombres}}</td>
+                                    <td >{{usu.apellidos}}</td>
+                                    <td >{{usu.sexo}}</td>
+                                    <td >{{usu.celular}}</td>
+
+
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modal-centered" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Default modal</h5>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-dark mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Fecha</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr  >
+                                            <th scope="row">1</th>
+                                            <td>ss
+                                                <button data-type="success" ng-click="editarAsistencia(asi)"  ng-repeat="asi in usu.asistencias" class="btn btn--icon-text   btn-outline-theme-dark " ><i class="zwicon-calendar-day" ></i>{{asi.cita | date:'dd/MM/yyyy'}}</button>
+                                            </td>
+                                            
+                                        </tr>
+                                       
+                                    </tbody>
+                                </table>
+    
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link">Save changes</button>
+                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <script src="resources/js/app.min.js"></script>
+   
+            <script src="demo/js/demo.js"></script>
+    

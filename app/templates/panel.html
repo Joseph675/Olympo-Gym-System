@@ -1,0 +1,122 @@
+
+       <header class="header">
+                <div class="navigation-trigger d-xl-none" ng-click="mostrarMenu()"  ng-class="{'toggled': aside_toggled}" data-sa-action="aside-open" data-sa-target=".sidebar">
+                    <i class="zwicon-hamburger-menu"></i>
+                </div>
+    
+                <div class="logo d-none d-sm-inline-flex">
+                    <a ui-sref="panel.inicio">Olympo Gym</a>
+                </div>
+                <!--
+                    <form class="search__inner">
+                        <div class="search__text">
+                            <input type="text" class="search__text" placeholder="Buscar personas" style="padding-left: 10px;padding-right: 10px;margin-right: 600px" ng-model="buscarusuario">
+                            <i class="zwicon-search search__helper" style="background-color: rgba(255, 255, 255, .08)"></i>
+                            <i class="zwicon-arrow-left search__reset" data-sa-action="search-close"></i>
+                        </div>
+                    </form>
+    
+                -->
+                    
+                <ul class="top-nav">
+                   
+    
+    
+                  
+    
+                    
+    
+                    <li class="d-none d-sm-inline-block">
+                    <a   ng-click="mostrarTemas()" class="top-nav__themes" data-sa-action="aside-open" data-sa-target=".themes"><i class="zwicon-palette"></i></a>
+
+                    </li>
+                </ul>
+    
+                <div class="clock d-none d-md-inline-block h.mm">
+                    <div >
+                        <span id="hora"></span>
+                        <span id="minuto" ></span>
+                        <span id="segundo" ></span>
+                        <span style="display: none;" id="amOpm" ></span>
+                    </div>
+                </div>
+            </header>
+
+        <aside class="sidebar" ng-class="{'toggled': aside_toggled}" ng-click="ocultarTemas_Menu()">
+            <div class="" style=" padding-left: 13px;padding-top: 15px; padding-right: 13px">
+                <div class="user">
+                    <div class="user__info" ng-click="ocultarTemas_Menu()" data-toggle="dropdown">
+                        <img class="user__img" ng-show="USER.sexo == 'F'" src="img/ico.jpg" alt="">
+                        <img class="user__img" ng-show="USER.sexo == 'M'" src="img/ico.jpg" alt="">
+                        <div>
+                                <div class="user__name">{{::USER.nombres}} {{::USER.apellidos}}</div>
+                                <div class="user__email">{{::USER.email}}</div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-menu dropdown-menu--invert shows">
+                        <a ui-sref="perfil" class="dropdown-item">Ver Perfil</a>
+                        <a class="dropdown-item" >Settings</a>
+                        <a ui-sref="login" class="dropdown-item" >Salir</a>
+                    </div>
+
+                </div>
+
+                <ul class="navigation">
+                    <li ><a ui-sref="panel.inicio" ui-sref-opts="{reload: true}"><i class="zwicon-home"></i> Home</a></li>
+        
+                    <li><a ui-sref="panel.form"><i i class="zwicon-user-plus"></i> Formulario</a></li>
+
+                    <li ><a ui-sref="panel.inventario"><i i class="zwicon-plus-circle"></i> Agregar producto</a></li>
+                    
+                    <li  class="navigation_sub"><a ui-sref="panel.table"><i i class="zwicon-users"></i> Usuarios</a>
+    
+                    <li  ><a ui-sref="panel.productos"><i i class="zwicon-shopping-cart"></i> Productos</a></li>
+
+                    <li ><a ui-sref="panel.asistencias"><i class="zwicon-smile"></i> Asistencias</a></li>
+
+                    <!--<li ><a ui-sref="panel.sincronizacion"><i i class="zwicon-cloud"></i> Sincronizacion</a></li>-->
+        
+                    <li ><a ui-sref="login"><i i class="zwicon-sign-out"></i> Salir</a></li>
+    
+            </ul>
+            </div>
+        </aside>
+
+        <div class="themes" ng-class="{'toggled': themes_toggled}">
+                <div class="scrollbar">
+                    <a  class="themes__item"  ng-click="setTheme(1)"><img src="resources/img/bg/1.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(2)"><img src="resources/img/bg/2.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(3)"><img src="resources/img/bg/3.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(7)"><img src="resources/img/bg/7.jpg" alt=""></a>
+        
+                    <a  class="themes__item" ng-click="setTheme(4)"><img src="resources/img/bg/4.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(5)"><img src="resources/img/bg/5.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(6)"><img src="resources/img/bg/6.jpg" alt=""></a>
+                   <!-- <a  class="themes__item" ng-click="setTheme(8)"><img src="resources/img/bg/8.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(9)"><img src="resources/img/bg/9.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(10)"><img src="resources/img/bg/10.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(11)"><img src="resources/img/bg/11.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(12)"><img src="resources/img/bg/12.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(13)"><img src="resources/img/bg/13.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(14)"><img src="resources/img/bg/14.jpg" alt=""></a>
+                    <a  class="themes__item" ng-click="setTheme(15)"><img src="resources/img/bg/15.jpg" alt=""></a>
+                   <a  class="themes__item" ng-click="setTheme(16)"><img src="resources/img/bg/16.jpg" alt=""></a>
+                   <a  class="themes__item" ng-click="setTheme(17)"><img src="resources/img/bg/17.jpg" alt=""></a> --> 
+                    
+                </div>
+            </div>
+
+    <section class="content" style=" padding-left: 0px; padding-top: 0px; " ng-click="ocultarTemas_Menu()"  >
+
+        <ui-view>
+        
+
+        </ui-view>
+
+        </section>
+    
+
+
+        
+    <script src="resources/js/app.min.js"></script>

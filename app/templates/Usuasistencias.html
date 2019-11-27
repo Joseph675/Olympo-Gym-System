@@ -1,0 +1,180 @@
+
+
+            <section  class="content">
+                <div class="content__inner content__inner--sm">
+                        <header class="content__title">
+                                <h1 >{{usu.nombres}} {{usu.apellidos}}</h1>
+                                <div class="actions">
+                                        <div id="Lafecha"></div>
+                                 </div>
+                         </header>
+
+                    <div class="card profile">
+                        <div class="profile__img">
+                            <img src="demo/img/contacts/2.png" alt="">
+
+                        </div>
+
+                        <div class="profile__info">
+
+                            <ul class="icon-list">
+                                <li><i class="zwicon-calendar-day"></i>{{usu.fecha | date:"dd/MM"}}  {{usu.fecha_fin | date:"dd/MM"}}</li>
+                                <li><i class="fal fa-address-card"></i>{{usu.tipo_documento}} {{ usu.numero_documento}}</li>
+                                <li><i class="fal fa-phone-alt"></i>{{usu.celular}}</li>
+                                <li><i class="fal fa-address-book"></i>{{usu.plan}}</li>
+                                <li><i class="fal fa-venus-mars"></i>{{usu.sexo}}</li>
+
+                                
+            
+            
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div  class="card" >
+                        <div class="card-body">
+                            <h5 class="card-body__title">{{usu.nombres }} {{usu.apellidos}}</h5>
+                            <div class="row">
+            
+                    <div class="col-sm-12"  style="margin-bottom: 15px; "> 
+                                                         <div class="row"> 
+                                                                <div class="col-sm-2">
+                                                                    <select class="form-control"  name="select_year" ng-model="dato.select_year">
+                                                                        <option style= "background-color: black; "></option>
+                                                                        <option  style= "background-color: black; " value="2019">2019</option>
+                                                                        <option  style= "background-color: black; " value="2020">2020</option>
+                                                                        <option  style= "background-color: black; " value="2021">2021</option>
+                                                                        <option  style= "background-color: black; " value="2022">2022</option>
+                                                                        <option  style= "background-color: black; " value="2023">2023</option>
+                                                                        <option  style= "background-color: black; " value="2024">2024</option>
+                                                                        <option  style= "background-color: black; " value="2025">2025</option>
+                                                                    </select>
+                                                                </div> 
+                                                                    
+                                                                <div class="col-sm-2 " style="  padding-left: 0px; margin-left: 12px;"> 
+                                                                    <select class="form-control"  name="select_month" ng-model="dato.select_month">
+                                                                        <option style= "background-color: black; "></option>
+    
+                                                                            <option   style= "background-color: black; " value="01">Enero</option>
+                                                                            <option  style= "background-color: black; "  value="02">Febrero</option>
+                                                                            <option  style= "background-color: black; " value="03">Marzo</option>
+                                                                            <option  style= "background-color: black; " value="04">Abril</option>
+                                                                            <option  style= "background-color: black; " value="05">Mayo</option>
+                                                                            <option  style= "background-color: black; " value="06">Junio</option>
+                                                                            <option  style= "background-color: black; " value="07">Julio</option>
+                                                                            <option  style= "background-color: black; " value="08">Agosto</option>
+                                                                            <option  style= "background-color: black; " value="09">Septiembre</option>
+                                                                            <option style= "background-color: black; "  value="10">Octubre</option>
+                                                                            <option  style= "background-color: black; " value="11">Noviembre</option>
+                                                                            <option  style= "background-color: black; " value="12">Diciembre</option>
+                                                                        </select>
+                                                                </div>
+                                                               
+                                                                <div >
+                                                                    <button style="margin-left: 12px;" class="btn btn-theme btn--icon-text" ng-click="traerNuevas()">Buscar</button>
+                                                                    <button style="margin-left: 12px;" class="btn btn-theme btn--icon-text"  ng-click="traerAntiguas()">Buscar antiguas</button>
+                                                                    <button style="margin-left: 12px;" class="btn btn-danger"  ng-click="Actualizarantiguo(usu)">Establecer asistencias como antiguas</button>
+                                                                </div>
+                                                        </div>
+                                                           
+                                  </div>
+                                <br>
+
+                            </div>
+                            <br>
+
+                                <span ng-repeat="asi in usu.asistencias">
+
+                                    <span ng-show="asi.antiguo">
+                                        <button class="btn btn-danger"  
+                                     "  ng-disabled="!asi.rowid" data-type="success" ng-click="editarantiguo(asi)"  
+                                            class="btn btnicon-text   btn-outline-theme-dark " >  
+                                                {{$index+1}}. {{asi.cita | date:"dd/MM/yyyy"}}
+                                        </button>
+                            
+                                    </span>
+                                
+                                    <span ng-show="!asi.antiguo">
+                                            <button ng-click="editarAsistencia(asi , usu)" 
+                                            class="btn btn-xs "
+                                            ng-class="{ 'btn btn-outline-theme': asi.rowid, ' btn-outline-theme-dark': !asi.rowid }"  ng-disabled="!asi.rowid">
+                                            {{$index+1}}.
+                                            {{asi.cita | date:"dd/MM"}}
+                                        </button>
+                                
+                                        </span>
+                                            
+                                </span>
+                                        
+                            <br>
+                            <br>
+            
+                            <h5 class="card-body__title">Informacion</h5>
+            
+                            <ul class="icon-list" ng-submit="insertarusuarios(username)">
+                                <li><i class="fal fa-address-card"></i>{{usu.tipo_documento}} {{ usu.numero_documento}}</li>
+                                <li><i class="fal fa-phone-alt"></i>{{usu.celular}}</li>
+                                <li><i class="fal fa-address-book"></i>{{usu.plan}}</li>
+                                <li><i class="fal fa-child"></i>Peso: {{usu.peso}}</li>
+                                <li><i class="fal fa-child"></i>Pecho: {{usu.pecho}}</li>
+                                <li><i class="fal fa-child"></i>Brazo: {{usu.brazo}}</li>
+                                <li><i class="fal fa-child"></i>Cintura: {{usu.cintura}}</li>
+                                <li><i class="fal fa-child"></i>Pierna: {{usu.pierna}}</li>
+                                <li><i class="fal fa-child"></i>Cola: {{usu.cola}}</li>
+                               
+                            </ul>
+                            <br>
+                            <div class="row">
+                                <div>
+                                        <button style="margin-left: 23px;" type="button" ng-click="actualizausuarios(usu)" class="btn btn-theme">Editar Usuario</button> 
+
+                                </div>
+
+                                <div class="col-sm-4 col-md-3">
+                                    <div class="form-group">
+                                        <h6 style="margin-bottom: 0px;margin-top: 3px">Activo/No Activo</h6 >
+                                        <div class="toggle-switch">
+                                            <input type="checkbox"  ng-click="Actualizactivo(usu)"  class="toggle-switch__checkbox" ng-true-value="1" ng-false-value="0" ng-model="usu.activo">
+                                            <i class="toggle-switch__helper"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br>
+
+                            <form >
+                                <div class="col-sm-12"  style="margin-bottom: 15px; ">   
+                                    <div class="row">
+    
+                                        <div class="col-sm-12" style="padding-left: 0px;">
+                                    
+                                            <h5 class="card-body__title">Observaciones</h5>
+                                    
+                                            <div class="input-group-prepend" >
+                                                <span class="input-group-text"><i class="zwicon-face-id" ></i> </span>
+                                                 <input type="text" class="form-control " placeholder="Observacion" ng-model="usu.observaciones">
+                                                 <button class="btn btn-theme btn--icon-text" type="submit" ng-click="Actualizarusuario(usu)" style="left: 15px;">Aceptar</button>
+                                             </div>
+                                             
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                           
+
+                           
+                            <br>
+                            <div  class="btn-demo">
+                                <button ng-click="volver()" class="btn btn-theme btn--icon-text"><i class="zwicon-arrow-left"></i> Volver</button>
+                            </div>
+                        </div>
+                        
+            
+                      
+                        
+                    </div>
+                </div>
+            </section>
+        </main>

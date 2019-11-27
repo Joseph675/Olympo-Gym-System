@@ -1,0 +1,51 @@
+    
+        <div class=" modal-dialog-centered " role="document" style="
+        padding-left: 150px;
+    ">
+            <div class="modal-content" style="
+            padding-right: 50px;
+        ">
+        
+            <div>
+                <div class="modal-body ng-scope" style="
+                padding-left: 50px;
+            ">
+
+                    <div>
+                        <h3 class="modal-title" id="modal-title">Restablecer Asistencias</h3>
+                    </div>
+    
+                 <h4>{{asis.cita | date:"dd/MM/yyyy"}}</h4> 
+                
+                
+                
+                                <div class="col-sm-12"  style=" padding-left: 0px; " >
+                                   
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"> <i class="zwicon-calendar-never"></i></span>
+                                        </div> 
+                                        <input type="date" class="form-control date-picker" placeholder="Pick a date & time" ng-model="asis.cita">
+                                    </div>
+    
+                                   
+                                </div>
+                <br>
+                <div class="modal-footer" style="width: 270px; ">
+                
+                    <button class="btn btn-info" type="button" title="La asistencia seleccionada se restablecera a asistencias de este mes" ng-click="antigua(asis)">Restablecer asistencia</button>
+                    <button class="btn btn-danger" type="button"  ng-click="eliminarasistencias(asis, usu)">Eliminar</button>
+                    <button class="btn btn-light" type="button" ng-click="cancel(asis)">Cancelar</button>
+                </div>
+            
+                </div>
+            </div> 
+            
+           
+        
+        </div>
+
+
+
+<script src="resources/js/app.min.js"></script>
+

@@ -1,0 +1,146 @@
+       
+<body >
+    <section class="content">
+       
+       <div class="content__inner d-print-none">
+            <header class="content__title">
+                    <h1>Bienvenido</h1>
+
+                    <div class="actions">
+                            <div id="Lafecha"></div>
+
+
+                           
+                     </div>
+            </header>
+        </div> 
+
+
+
+        <div class="card widget-visitors">
+            <div class="card-body">
+                    <input type="text" class="form-control  d-print-none" ng-model="buscarusuario" placeholder="Buscar Usuario" >
+                    <br>
+                    <div class="row" style="padding-top: 8px;" >
+                        <div class="col-xs-12">
+                            <div class="btn-group">
+                                <button style="margin-left: 15px;" class="btn btn-outline-theme" ng-model="datos.plan" ng-click="traer()">Todos</button>
+                                <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="traer('15 Dias')">15 días</button>
+                                <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="traer('30 Dias')">30 días</button>
+                                <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="traer('Dias Contados')">Días contados</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <table class="table mb-3">
+
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Nombres</th>
+                            <th>Dias faltantes/Vencio</th>
+                            <th>Inició</th>
+                            <th>Fecha maximo</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="usu in usus_alert | filter:buscarusuario">
+                            <td ng-click="Usuasistencias(usu)" style="cursor: pointer;">{{usu.nombres}} {{usu.apellidos}}</td>
+                            <td>
+                                <span ng-show="usu.dias > -1  ">
+                                    Faltan {{usu.dias}} días
+                                </span>
+                            
+                                <span ng-show="usu.dias < 0 ">
+                                    Venció hace {{ usu.dias_abs }} días
+                                </span>
+
+                                <span ng-show="usu.total ">
+                                        , Quedan  {{ usu.total }} asistencias
+                                 </span>
+                            
+                            </td>
+                            <td>{{usu.fecha}}</td>
+                            <td>{{usu.fecha_fin}}</td>
+                            
+                        </tr>
+                       
+                    </tbody>
+                    
+                </table>
+               
+
+            </div>
+                
+        </div>
+      
+        <div class="card widget-visitors d-print-none">
+        <div class="card-body">
+                        <h4 class="card-title">Usuarios totales</h4>
+                        <h6 class="card-subtitle">Usuarios inscritos activos</h6>
+
+                        <div style="cursor: pointer;" class="widget-visitors__stats">
+                            <div ui-sref="panel.table" >
+                                <strong>{{ cantidad_usuarios }}</strong>
+                                <small>Usuarios totales</small>
+                            </div>
+                            <div ui-sref="panel.table">
+                                <strong>{{usuarios_mes}}</strong>
+                                <small>Usuarios con plan de mes </small>
+                            </div>
+
+                            
+                        </div>
+                        <div style="cursor: pointer;" class="widget-visitors__stats">
+                           
+                            <div ui-sref="panel.table">
+                                <strong>{{usuarios_dias}}</strong>
+                                <small>Usuarios con plan de 15 Dias</small>
+                            </div>
+                            <div ui-sref="panel.table">
+                                <strong>{{usuarios_diascontados}}</strong>
+                                <small>Usuarios con plan de Dias Contados</small>
+                            </div>
+                        </div>
+
+                        <div class="widget-visitors__stats">
+                           
+                            <div ui-sref="panel.table_mes">
+                                <strong>{{usuarios_30dias}}</strong>
+                                <small>Usuarios con plan de Mes finalizado</small>
+                            </div>
+                            <div >
+                                <strong >{{usuarios_15dias}}</strong>
+                                <small>Usuarios con plan de 15 Dias finalizado</small>
+                            </div>
+                        </div>
+
+                        <div  class="widget-visitors__stats">
+                           
+                            <div >
+                                <strong>{{usuarios_dias_contados_vencidos}}</strong>
+                                <small>Usuarios con plan de Dias Contados finalizado</small>
+                            </div>
+                            
+                        </div>
+
+
+                    </div>
+                     
+                </div>
+ 
+      </section>  
+</body>
+   
+        <script src="resources/js/app.min.js"></script>
+
+
+
+
+
+       
+
+        

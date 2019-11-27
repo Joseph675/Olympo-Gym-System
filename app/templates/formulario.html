@@ -1,0 +1,216 @@
+       
+
+    <section class="content">
+        <div class="content__inner">
+                <header class="content__title">
+                        <h1>Formulario</h1>
+    
+                        <div class="actions">
+                                <div id="Lafecha"></div>
+
+                        </div>
+                 </header>
+
+                    <form  ng-submit="insertarusuarios(numero_documento)">
+                            <div class="card">
+                                    
+                                    <div class="card-body">
+                                        
+                                       
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group"  class="wrap-input2 validate-input" >
+                                                    <label>Nombre</label>
+
+                                                    <input id="nombres" type="text" class="form-control  " placeholder="Nombre" ng-model="nombres" >
+
+                                                    <i class="form-group__bar"></i>
+                                                </div>
+                                            </div>
+            
+                                            <div class="col-sm-6">
+                                                <div class="form-group"  class="wrap-input2 validate-input" >
+                                                    <label>Apellido</label>
+                                                    <input id="apellido" type="text" class="form-control " placeholder="Apellido" ng-model="apellidos">
+                                                    <i class="form-group__bar"></i>
+                                                </div>
+                                            </div>
+
+                                                                                         
+                                            
+                                             <div class="col-sm-6">
+                                                <label>Fecha de ingreso</label>
+            
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="zwicon-calendar-never"></i></span>
+                                                    </div>
+                                                    <input id="fecha" type="date" class="form-control date-picker" placeholder="Fecha" ng-model="fecha">
+                                                </div>
+                                             </div>
+
+                                             <div class="col-sm-6">
+                                                <label>Fecha de corte</label>
+            
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="zwicon-calendar-never"></i></span>
+                                                    </div>
+                                                    <input  type="date" class="form-control date-picker" placeholder="Fecha" ng-model="fecha_fin">
+                                                </div>
+                                             </div>
+
+                                             <div class="col-sm-6">
+                                                 <br>                                                <div class="form-group">
+                                                    <label>Sexo</label>
+            
+                                                    <select style="cursor: pointer;"  ng-model="sexo"  class="form-control" placeholder="Seleciona un sexo">
+                                                        <option style= "background-color: black; "></option>
+                                                        <option id="f" ng-model="sexo" style= "background-color: black; ">F</option>
+                                                        <option id="m" ng-model="sexo"  style= "background-color: black;">M</option>
+                                                       
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <br>                                                <div class="form-group">
+                                                   <label>Plan</label>
+           
+                                                   <select style="cursor: pointer;"  ng-model="plan"  class="form-control" placeholder="Seleciona un plan">
+                                                       <option style= "background-color: black; "></option>
+                                                       <option id="Dias Contados" ng-model="plan" style= "background-color: black; ">Dias Contados</option>
+                                                       <option id="30 Dias" ng-model="plan" style= "background-color: black; ">30 Dias</option>
+                                                       <option id="15 Dias" ng-model="plan"  style= "background-color: black;">15 Dias</option>
+                                                      
+                                                   </select>
+                                               </div>
+                                           </div>
+
+                                            <div class="col-sm-6">
+                                                        <label>Celular</label>
+                                                     <div class="input-group-prepend">
+                                                        
+                                                        <span class="input-group-text"><i class="zwicon-phone" ng-click="mostrarpassword()"></i> </span>
+                                                        <input id="celular" type="number" class="form-control input-mask" data-mask="000-000-0000" placeholder="000-000-0000"   ng-model="celular" >
+                                                    </div>
+                                             </div>
+                                             <div class="col-sm-6">
+                                                    <label>Observaciones </label>
+                                                    <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i  class="zwicon-face-id" ></i> </span>
+                                                    <input  type="text" class="form-control " placeholder="Observaciones" ng-model="observaciones" >
+                                             
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6" style="margin-top: 20px;" >
+                                            <label>Peso corporal</label>
+                                            <div class="input-group-prepend">
+                                            <input  type="text" class="form-control " placeholder="Peso corporal" ng-model="peso">
+                                         </div>
+                                       </div>
+
+                                    <div class="col-sm-6" style="margin-top: 20px;" >
+                                            <label>Pecho</label>
+
+                                        <div class="input-group-prepend">
+                                            <input   type="text" class="form-control " placeholder="Pecho" ng-model="pecho" >
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-top: 20px;" >
+                                        <label>Brazo</label>
+                                        <div class="input-group-prepend">
+                                        <input  type="text" class="form-control " placeholder="Brazo" ng-model="brazo">
+                                     </div>
+                                   </div>
+
+                                <div class="col-sm-6" style="margin-top: 20px;" >
+                                        <label>Cintura</label>
+
+                                    <div class="input-group-prepend">
+                                        <input   type="text" class="form-control " placeholder="Cintura" ng-model="cintura" >
+
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6" style="margin-top: 20px;" >
+                                    <label>Pierna</label>
+                                    <div class="input-group-prepend">
+                                    <input  type="text" class="form-control " placeholder="Pierna" ng-model="pierna">
+                                 </div>
+                               </div>
+
+                            <div class="col-sm-6" style="margin-top: 20px;" >
+                                    <label>Cola</label>
+
+                                <div class="input-group-prepend">
+                                    <input   type="text" class="form-control " placeholder="Cola" ng-model="cola" >
+
+                                </div>
+                            </div>
+
+                                        
+                                            <div class="col-sm-6" style="margin-top: 20px;" >
+                                                    <label>Username</label>
+                                                    <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="zwicon-user" ng-click="mostrarpassword()"></i> </span>
+                                                    <input  type="text" class="form-control " placeholder="Usuario" ng-model="username">
+                                                 </div>
+                                            </div>
+
+                                            <div class="col-sm-6" style="margin-top: 20px;" >
+                                                    <label>Password </label>
+
+                                                <div class="input-group-prepend">
+                                                    <span style="cursor: pointer;"  class="input-group-text"><i  class="zwicon-eye" ng-click="mostrarpassword()"></i> </span>
+                                                    <input  id="contraseña" type="password" class="form-control " placeholder="Password" ng-model="password" >
+
+                                                </div>
+                                            </div>
+                                            
+
+                                            <div class="col-sm-6" style="margin-top: 20px;" >
+                                                <label>Tipo de documento </label>
+
+                                              
+                                                 <div class="input-group-prepend">
+                                                        <span class="input">
+                                                            <select  ng-model="tipo_documento"  class="form-control" style="cursor: pointer;padding-right: 0px;border-right-width: 0px;margin-right: 16px;">
+                                                                <option style= "background-color: black; "></option>
+                                                                <option id="T.I"  style= "background-color: black; ">T.I</option>
+                                                                <option id="C.C"  style= "background-color: black; ">C.C</option>
+                                                               
+                                                            </select> 
+                                                        </span>
+
+                                                        
+
+                                                      <input type="number" class="form-control " placeholder="Numero de documento" ng-model="numero_documento" >
+
+                                                 </div>
+                                            </div>
+
+                                           
+                                            
+                                    
+                                    
+                            </div>
+                               
+                            <br>
+    
+                                    <button type="submit"   class="btn btn-theme btn-block" id="sa-info">Ingresar usuario</button>
+                                                    
+                             
+                            
+                    </form>
+
+                    
+
+                    
+
+                </section>   
+        <script src="resources/js/app.min.js"></script>
+        
+        
+
+        

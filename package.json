@@ -1,0 +1,72 @@
+{
+  "name": "Olympo-Gym",
+  "version": "0.0.1",
+  "description": "aplicación para gimnasio",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "build": "build --mac --win --x64 --ia32",
+    "build-mac": "build --mac",
+    "dist": "build -p always --x64 --ia32",
+    "never": "build -p never --x64 --ia32",
+    "publish": "build --mac --win -p always",
+    "postinstall": "install-app-deps"
+  },
+  "repository": "https://github.com/bluesky777/audit-seven.git",
+  "keywords": [
+    "Gym System",
+    "gym-system",
+    "gimnasio"
+  ],
+  "author": "Kevin Mijares",
+  "license": "CC0-1.0",
+  "build": {
+    "appId": "gymsystem",
+    "mac": {
+      "category": "com.education.gym.system"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/ico.jpg"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "electron-is-dev": "^0.3.0",
+    "electron-log": "^2.2.16",
+    "electron-updater": "^4.0.0",
+    "express": "^4.15.2",
+    "ip": "^1.1.5",
+    "node-excel-export": "^1.4.4",
+    "socket.io": "^2.1.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^6.0.5",
+    "electron": "^2.0.8",
+    "electron-builder": "^20.28.2",
+    "electron-reload": "^1.2.5"
+  }
+}

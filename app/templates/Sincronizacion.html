@@ -1,0 +1,121 @@
+
+       
+      
+<section class="content">
+            <div class="content__inner d-print-none">
+                    <header class="content__title">
+                            <h1>Sincronizacion</h1>
+                            <div class="actions">
+                                    <div id="Lafecha"></div>
+    
+                            </div>
+                        </header>
+                    <div class="card">
+                        <div class="card-body">
+
+
+                            <div>
+                                <button class="btn btn-theme btn--icon-text" ng-click="subir_datos()"><i style="font-size: 18px" class="zwicon-cloud-upload"></i> Subir Datos</button>
+                                <button class="btn btn-theme btn--icon-text" ng-click="descargar_datos()"><i style="font-size: 18px" class="zwicon-cloud-download"></i> Descargar Datos</button>
+                                <button class="btn btn-theme btn--icon-text" ng-click="eliminar_tablas_promise()"><i style="font-size: 18px" class="zwicon-database"></i> Eliminar Datos</button>
+                                
+                            </div>
+
+                            <div>
+                                {{ cambios_sin_subir }} cambios sin subir
+                            </div>
+                                    
+
+
+                            
+
+                            <div class="table-responsive data-table ">
+                                
+                                <table id="searchObjResults" class="table">
+
+                                    <thead>
+                                        
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Celular</th>
+                                            <th>Username</th>
+                                            <th>Modificado</th>
+                                            <th>Eliminado</th>
+                                            <th>Nuevo</th>
+
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="usuario in usuarios | filter:buscarusuario:activo">
+                                            <td >{{$index+1}}</td>
+                                            <td >{{usuario.nombres}}</td>
+                                            <td>{{usuario.apellidos}}</td>
+                                            <td>{{usuario.celular}}</td>
+                                            <td>{{usuario.username}}</td>
+                                            <td> <span ng-show="usuario.modificado" style="color: rgb(255, 157, 0)">Modificado</span>  </td> 
+                                            <td> <span ng-show="usuario.eliminado"  style="color: rgb(233, 18, 18)">Eliminado</span> </td> 
+                                            <td> <span ng-show="!usuario.id"  style="color: rgb(37, 217, 241)">Nuevo</span>  </td> 
+                                        </tr>
+                                        
+                                  
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    
+
+                   
+                    
+
+
+               
+    </div>
+
+
+<!--Print-->
+    <div class="card d-none d-print-block">
+        <div class="card-body">
+         <table class="table table-bordered mb-0" >
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Sexo</th>
+                    <th>Fecha</th>
+                    <th>Celular</th>
+                    <th>Username</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="usuario in usuarios">
+                 <td >{{$index+1}}</td>
+                <td >{{usuario.nombres}}</td>
+                <td>{{usuario.apellidos}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.sexo}}</td>
+                <td>{{usuario.fecha}}</td>
+                <td>{{usuario.celular}}</td>
+                <td>{{usuario.username}}</td>
+            
+                
+            </tr>
+              
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+
+</section>
+
+

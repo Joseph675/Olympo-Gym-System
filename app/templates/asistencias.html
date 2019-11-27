@@ -1,0 +1,142 @@
+<section class="content" style="padding-right: 0px;">
+    <header class="content__title">
+        <h1>Asistencias</h1>
+
+        <div class="actions">
+            <div id="Lafecha"></div>
+
+        </div>
+    </header>
+    <div class="card d-print-none">
+
+
+        <div class="card-body">
+
+
+            <div>
+                <input class="form-control" type="text" placeholder="Buscar Usuario" aria-label="Search" ng-model="buscarusuario" style="margin-bottom: 15px; ">
+                <div class="col-sm-12" style="margin-bottom: 15px; ">
+                    <div class="row">
+                        <div class="col-sm-5 col-sm-5" style="padding-left: 0px;">
+                            <select style="cursor: pointer;" class="form-control" name="select_year" ng-model="dato.select_year">
+                                <option style="background-color: black; "></option>
+                                <option style="background-color: black; " value="2019">2019</option>
+                                <option style="background-color: black; " value="2020">2020</option>
+                                <option style="background-color: black; " value="2021">2021</option>
+                                <option style="background-color: black; " value="2022">2022</option>
+                                <option style="background-color: black; " value="2023">2023</option>
+                                <option style="background-color: black; " value="2024">2024</option>
+                                <option style="background-color: black; " value="2025">2025</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-5 col-sm-5">
+                            <select style="cursor: pointer;" class="form-control" name="select_month" ng-model="dato.select_month">
+                                <option style="background-color: black; "></option>
+                                <option style="background-color: black; " value="01">Enero</option>
+                                <option style="background-color: black; " value="02">Febrero</option>
+                                <option style="background-color: black; " value="03">Marzo</option>
+                                <option style="background-color: black; " value="04">Abril</option>
+                                <option style="background-color: black; " value="05">Mayo</option>
+                                <option style="background-color: black; " value="06">Junio</option>
+                                <option style="background-color: black; " value="07">Julio</option>
+                                <option style="background-color: black; " value="08">Agosto</option>
+                                <option style="background-color: black; " value="09">Septiembre</option>
+                                <option style="background-color: black; " value="10">Octubre</option>
+                                <option style="background-color: black; " value="11">Noviembre</option>
+                                <option style="background-color: black; " value="12">Diciembre</option>
+                            </select>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-1">
+
+                            <button class="btn btn-theme btn--icon-text" ng-click="traerusuarios()">Buscar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="padding-top: 15px;" >
+                        <div class="col-xs-12">
+                            <div class="btn-group">
+                                <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="traerusuarios()">Todos</button>
+                                <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="traerusuarios('15 Dias')">15 días</button>
+                                <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="traerusuarios('30 Dias')">30 días</button>
+                                <button class="btn btn-outline-theme" ng-model="datos.plan" ng-click="traerusuarios('Dias Contados')">Días contados</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th style=" text-align: center;">Nombres</th>
+                            <th style=" text-align: center;">Asistencia</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="usu in usuarios  | filter: buscarusuario">
+                            <td class="contenedor-add-asistencia">
+                                {{$index+1}}
+                            </td>
+                            <td>
+                                <div ng-click="Usuasistencias(usu)" ng-class="{ 'fondo_terminado': usu.terminado }">
+                                        <button class="btn"  style="cursor: pointer;text-align: left;">
+                                                {{usu.nombres}}  
+                                                {{usu.apellidos}}  
+                                                <span ng-show="usu.observaciones.length > 0" style="color:yellow"
+                                                    title="{{usu.observaciones}}">
+                                                    <i class="fa fa-exclamation-triangle"></i>
+                                                </span>
+                                            </button>
+                                </div>
+                               
+                            </td>
+
+                            <td>
+                                
+
+                                    <button ng-click="editarAsistencia(asi , usu)" ng-repeat="asi in usu.asistencias"
+                                        class="btn btn-xs " title="{{asi.cita | date:'dd/MM/yyyy'}}"
+                                        ng-class="{ 'btn btn-outline-theme': asi.rowid, ' btn-outline-theme-dark': !asi.rowid }"  ng-disabled="!asi.rowid">
+                                        {{$index+1}}.
+                                        {{asi.cita | date:"dd/MM"}}
+                                    </button>
+
+                                
+
+                            </td>
+                            <td>
+                                            <button class=" btn btn-theme btn--icon btn-outline-theme d-print-none"
+                                            ng-click="insertarasistencia(usu)"
+                                            ng-disabled="usu.terminado">
+                                            
+                                            +
+                                        </button>
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    </div>
+</section>
+
+
+
+
+
+<!-- App functions and actions -->
+<script src="resources/js/app.min.js"></script>
